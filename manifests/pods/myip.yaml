@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myip
+  namespace: sandbox
+spec:
+  containers:
+    - image: service/myip:latest
+      imagePullPolicy: Never
+      name: myip
+      ports:
+      - containerPort: 8080
+        name: tcp8080

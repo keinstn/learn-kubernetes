@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myip
+  namespace: sandbox
+spec:
+  rules:
+    - host: "myip.local"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: myip
+                port:
+                  number: 8080
