@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: armyknife
+  namespace: sandbox
+spec:
+  containers:
+    - image: tool/armyknife:latest
+      imagePullPolicy: Never
+      name: armyknife
+      args: ["sleep", "infinity"]
